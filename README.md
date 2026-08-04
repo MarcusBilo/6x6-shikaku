@@ -1,2 +1,11 @@
-# go-6x6-shikaku
-Endless 6x6 Shikaku Puzzles
+# Shikaku
+
+Mouse Only -- endless -- openGL 3.3 (windows, mac, linux)
+
+## Credits
+
+https://github.com/go-gl/gl
+
+https://github.com/go-gl/glfw
+
+https://github.com/go-gl/mathgl
