@@ -23,13 +23,13 @@ This is a simple, endlessly playable Shikaku puzzle game using a 6×6 grid. Each
 1. Make sure you have [Go](https://golang.org/dl/) installed (version ≥ 1.25.0 at best)
 2. Clone this repository:
    ```bash
-   git clone https://github.com/MarcusBilo/blackjack-tui
-   cd blackjack-tui
+   git clone https://github.com/MarcusBilo/6x6-shikaku
+   cd 6x6-shikaku
    ```
 3. Build and run:
    ```bash
    go build
-   .\blackjack-tui
+   .\6x6-shikaku
    ```
 
 
