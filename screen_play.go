@@ -64,11 +64,7 @@ func (g *Game) toggleRect(r CellRect) {
 	}
 
 	for _, existing := range g.rects {
-		rectsOverlap := existing.topLeft.x <= r.bottomRight.x &&
-			existing.bottomRight.x >= r.topLeft.x &&
-			existing.topLeft.y <= r.bottomRight.y &&
-			existing.bottomRight.y >= r.topLeft.y
-		if rectsOverlap {
+		if rectsOverlap(existing, r) {
 			return
 		}
 	}
@@ -76,14 +72,18 @@ func (g *Game) toggleRect(r CellRect) {
 	g.rects = append(g.rects, r)
 }
 
+func rectsOverlap(a, b CellRect) bool {
+	return a.topLeft.x <= b.bottomRight.x &&
+		a.bottomRight.x >= b.topLeft.x &&
+		a.topLeft.y <= b.bottomRight.y &&
+		a.bottomRight.y >= b.topLeft.y
+}
+
 func (g *Game) checkSolved() bool {
 	for i := range g.rects {
 		for j := i + 1; j < len(g.rects); j++ {
-			rectsOverlap := g.rects[i].topLeft.x <= g.rects[j].bottomRight.x &&
-				g.rects[i].bottomRight.x >= g.rects[j].topLeft.x &&
-				g.rects[i].topLeft.y <= g.rects[j].bottomRight.y &&
-				g.rects[i].bottomRight.y >= g.rects[j].topLeft.y
-			assert(!rectsOverlap, "game: rects overlap -- checkSolved's area-as-coverage argument is void")
+			assert(!rectsOverlap(g.rects[i], g.rects[j]),
+				"game: rects overlap -- checkSolved's area-as-coverage argument is void")
 		}
 	}
 
