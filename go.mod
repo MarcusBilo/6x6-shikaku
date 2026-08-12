@@ -1,4 +1,4 @@
-module awesomeProject1
+module 6x6-shikaku
 
 go 1.25.12
 
