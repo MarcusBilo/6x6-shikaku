@@ -402,8 +402,8 @@ func analyzeClues(clues []clueCell) puzzleStats {
 }
 
 const (
-	maxPlacementsPerClue  = 22
-	maxPlacementsPerShape = 90
+	maxPlacementsPerClue  = 22 // max rectangles for one cell and area; attained at area 12 on a 6x6 grid
+	maxPlacementsPerShape = 90 // conservative upper bouhnd on candidate removal/assignments for a valid 6x6
 )
 
 const (
