@@ -54,4 +54,4 @@ From the settings menu, you can configure the game's maximum FPS and TPS.
 
 Before switching to OpenGL, I used ebiten as a draft framework to prototype the game.
 
-@hajimehoshi [2D game engine](hajimehoshi/ebiten)
+@hajimehoshi [2D game engine](https://github.com/hajimehoshi/ebiten)
